@@ -28,7 +28,7 @@ h1 {
 
 #newAuth {
   margin-left: 10px;
-  color: white;
+  color: black;
 }
 
 .toolbar_buttons {
@@ -222,9 +222,9 @@ md-list .md-button {
 }
 
 #background{
-  /*background-image: url('../assets/backgroundImage.jpg');*/
+  background-image: url('../assets/backgroundImage.gif');
   background-size: 100% 100%;
-  background-color: #ddd;
+  /*background-color: #ddd;*/
   background-repeat: no-repeat;
   margin-top: 0;
   position:relative;
@@ -232,7 +232,7 @@ md-list .md-button {
 }
 
 #header{
-  background-color: #55f;
+  background-color: rgba(0,0,255,0.5);
 }
 
 #icon{
@@ -240,6 +240,13 @@ md-list .md-button {
   position: relative;
   width: 13%;
   height: auto;
+}
+
+.center-form{
+  background-color: rgba(255,255,255,0.5);
+  margin-top: 20px;
+  border-radius: 25px;
+  padding: 20px;
 }
 
 /* Using Data-URI converted from svg until <md-icon> becomes available
