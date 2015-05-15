@@ -10,9 +10,13 @@ angular.module('headcount.events', [])
 
   // Contains the information of the user's credit card
   $scope.card = {};
+  $scope.card.number="4000000000000077";
+  $scope.card.cvc="222";
+  $scope.card.expirationMonth="12";
+  $scope.card.expirationYear="2022";
 
   // Set the stripe publishable key. This key will used to generate a credit card token
-  Stripe.setPublishableKey('pk_test_II4Yqh4AHAC2laEYYcJTQqhg');
+  Stripe.setPublishableKey('pk_test_oexI0bw5PDtL452kuxZtQX0I');
 
   // Amount to charge the client. To define the value we are dividing the number of person who joined by the cost of the event
   $scope.card.amount = $scope.event.thresholdMoney / $scope.event.thresholdPeople ;
@@ -45,6 +49,8 @@ angular.module('headcount.events', [])
           $http.post('/payments/token', {token: $scope.token, amount: $scope.card.amount})
             .success(function(data, status, headers, config){
               console.log('Status:', status, 'Message: Token sent to the server');
+              //redirect back to the main events page on successful payment
+              window.location.href="#/events";
             })
             .error(function(data, status, headers, config){
               console.log('Status:', status, 'Message: Failed attempt, blame Jimmy.');

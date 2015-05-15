@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var stripe = require("stripe")("sk_test_EfNB8XzSZodwZjCx6BFtz6Ci");
+var stripe = require("stripe")("sk_test_S93fylBvsuMMemLE9Aj8A7Eo");
 var User  = require('./../app/models/user');
 
 router.post('/token', function(req, res){
 
 	// Get the credit card token and amount submitted by the form
 	var token = req.body.token;
+
+	//add this thing to the database
+		//if the amount is greater than threshold amount, charge it to each invite on the event
+		//
 	var amount = req.body.amount;
 
 	// Charge the customer
