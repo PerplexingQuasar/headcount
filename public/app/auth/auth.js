@@ -17,7 +17,6 @@ angular.module('headcount.auth', [])
    */
 
   $scope.signin = function () {
-    console.log('$scope.user', $scope.user);
     return $http({
       method: 'POST',
       url: '/auth/local',
