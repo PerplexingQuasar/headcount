@@ -224,6 +224,7 @@ md-list .md-button {
 #background{
   /*background-image: url('../assets/backgroundImage.jpg');*/
   background-size: 100% 100%;
+  background-color: #ddd;
   background-repeat: no-repeat;
   margin-top: 0;
   position:relative;
