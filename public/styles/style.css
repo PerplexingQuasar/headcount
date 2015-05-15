@@ -222,7 +222,7 @@ md-list .md-button {
 }
 
 #background{
-  background-image: url('../assets/backgroundImage.jpg');
+  /*background-image: url('../assets/backgroundImage.jpg');*/
   background-size: 100% 100%;
   background-repeat: no-repeat;
   margin-top: 0;
@@ -231,14 +231,14 @@ md-list .md-button {
 }
 
 #header{
-  background-color: transparent;
+  background-color: #55f;
 }
 
 #icon{
   display: inline-block;
   position: relative;
-  width: auto;
-  height: 100%;
+  width: 13%;
+  height: auto;
 }
 
 /* Using Data-URI converted from svg until <md-icon> becomes available
