@@ -3,6 +3,7 @@ body {
   margin-top: 10px;
   padding: 50px;
   font: 14px "Arial";
+  font-size: 20px;
 }
 
 h1 {
@@ -92,7 +93,10 @@ h1 {
 
 .link img {
   float: left;
-  margin: 0 5px;
+  margin-left: 5px;
+  margin-right: 20px;
+  width: 240px;
+  height: 140px;
 }
 
 .link .visits {
@@ -125,7 +129,7 @@ form {
 }
 
 input {
-  width: 360px;
+  width: 40%;
   display: block;
   font-size: 13px;
   padding: 5px;
@@ -189,8 +193,10 @@ ul.account {
 }
 
 .links .ng-scope{
-  width: 400px;
+  height: auto;
+  width: 40%;
   float:left;
+  font-size: 20px;
 }
 
 .preview {
@@ -215,6 +221,9 @@ md-list .md-button {
 
 .events {
   height: 100%;
+  position: relative;
+  top: 10px;
+  z-index: 0;
 }
 
 .center-form {
@@ -229,6 +238,7 @@ md-list .md-button {
   margin-top: 0;
   position:relative;
   height: 100%;
+  overflow: hidden;
 }
 
 #header{
@@ -247,6 +257,25 @@ md-list .md-button {
   margin-top: 20px;
   border-radius: 25px;
   padding: 20px;
+}
+
+.link{
+  background-color: rgba(255,255,255,0.8);
+  position: relative;
+  left: 30%;
+  top: 5%;
+}
+
+#ngView{
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#filter-bar{
+  position: relative;
+  left: 30%;
+  margin-bottom: 10px;
 }
 
 /* Using Data-URI converted from svg until <md-icon> becomes available

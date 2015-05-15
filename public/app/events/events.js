@@ -271,7 +271,11 @@ angular.module('headcount.events', ['flash'])
 
 
         $scope.newEvent.invited = $scope.invitedUsers;
-        console.log('Event details', $scope.newEvent);
+        console.log('Event details', $scope.newEvent.image);
+        if(!$scope.newEvent.image){
+          console.log('defaultEventImage');
+          $scope.newEvent.image = 'assets/defaultEventImage.jpg';
+        }
         return $http({
                 method: 'POST',
                 url: '/events-create',
