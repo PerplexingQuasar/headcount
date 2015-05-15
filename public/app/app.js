@@ -57,7 +57,7 @@ angular.module('headcount', [
   var eventServices = {};
 
   eventServices.shouldNotBeCreatable = false;
-  eventServices.shouldNotBeClickable = false;
+  eventServices.shouldNotBeClickable = true;
 
   eventServices.currentEvent = {};
   return eventServices;

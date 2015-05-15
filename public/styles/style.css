@@ -217,6 +217,8 @@ md-list .md-button {
 .event-image {
   margin: 20px;
   border-radius: 10px;
+  width: 200px;
+  height: 200px;
 }
 
 .events {
@@ -224,6 +226,11 @@ md-list .md-button {
   position: relative;
   top: 10px;
   z-index: 0;
+}
+
+.event{
+  background-color: rgba(255,255,255,0.8);
+
 }
 
 .center-form {
@@ -242,7 +249,7 @@ md-list .md-button {
 }
 
 #header{
-  background-color: rgba(0,0,255,0.5);
+  background-color: rgba(0,0,255,0.4);
 }
 
 #icon{
@@ -276,6 +283,49 @@ md-list .md-button {
   position: relative;
   left: 30%;
   margin-bottom: 10px;
+}
+
+.event-info img{
+  position: relative;
+  display: inline-block;
+  left: 35%;
+}
+
+#event-{
+  position: relative;
+  display: inline-block;
+  left: 35%;
+}
+
+.event-button{
+  left: 42.5%;
+}
+
+#payment-form .entry{
+  position: relative;
+  left: 43%;
+}
+
+#payment-form #credit-number{
+  left: 35%;
+}
+
+.animate-hide {
+  -webkit-transition: all linear 1.0s;
+  transition: all linear 1.0s;
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+}
+
+.animate-hide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.check-element {
+  padding: 10px;
 }
 
 /* Using Data-URI converted from svg until <md-icon> becomes available

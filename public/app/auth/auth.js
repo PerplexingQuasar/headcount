@@ -63,7 +63,6 @@ angular.module('headcount.auth', [])
       url: '/auth/logout'
     })
     .then(function(resp) {
-      $window.alert("You've signed out!");
     });
   };
 

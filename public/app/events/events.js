@@ -1,3 +1,4 @@
+
 angular.module('headcount.events', ['flash'])
 
 .controller('EventsPayment', function($scope, $http, $timeout, $anchorScroll, $location, Flash) {
@@ -17,10 +18,10 @@ angular.module('headcount.events', ['flash'])
 
   // Contains the information of the user's credit card
   $scope.card = {};
-  $scope.card.number="4000000000000077";
-  $scope.card.cvc="222";
-  $scope.card.expirationMonth="12";
-  $scope.card.expirationYear="2022";
+  $scope.card.number="";
+  $scope.card.cvc="";
+  $scope.card.expirationMonth="";
+  $scope.card.expirationYear="";
 
   // Set the stripe publishable key. This key will used to generate a credit card token
   Stripe.setPublishableKey('pk_test_oexI0bw5PDtL452kuxZtQX0I');
