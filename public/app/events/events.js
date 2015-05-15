@@ -1,7 +1,14 @@
-angular.module('headcount.events', [])
+angular.module('headcount.events', ['flash'])
 
-.controller('EventsPayment', function($scope, $http) {
-
+.controller('EventsPayment', function($scope, $http, $timeout) {
+  $scope.successAlert = function () {
+    var message = '<strong> Well done!</strong>  You successfully read this important alert message.';
+    Flash.create('success', message, 'custom-class');
+    // First argument (success) is the type of the flash alert
+    // Second argument (message) is the message displays in the flash alert
+    // You can inclide html as message (not just text)
+    // Third argument (custom-class) is the custom class for the perticular flash alert
+  }
   // Disables the submit payment button
   $scope.payBtnClickable = false;
 
@@ -50,7 +57,11 @@ angular.module('headcount.events', [])
             .success(function(data, status, headers, config){
               console.log('Status:', status, 'Message: Token sent to the server');
               //redirect back to the main events page on successful payment
-              window.location.href="#/events";
+              $timeout(function(){
+                window.location.href="#/events";
+               }, 2000);
+              $scope.successAlert();
+              // alert("Thanks for paying for this sweet event, yo.");
             })
             .error(function(data, status, headers, config){
               console.log('Status:', status, 'Message: Failed attempt, blame Jimmy.');
