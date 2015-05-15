@@ -1,6 +1,6 @@
 angular.module('headcount.events', ['flash'])
 
-.controller('EventsPayment', function($scope, $http, $timeout, $anchorScroll, $location, Flash) {
+.controller('EventsPayment', function($scope, $http, $timeout, $anchorScroll, $location, Flash,EventsFactory) {
   $scope.successAlert = function () {
     var message = '<strong> Well done!</strong>  Your card was successfully charged.';
     Flash.create('success', message, 'custom-class');
@@ -53,7 +53,11 @@ angular.module('headcount.events', ['flash'])
           $scope.token = response['id'];
 
           // Send the token the server in this route: /payments/token
-          $http.post('/payments/token', {token: $scope.token, amount: $scope.card.amount})
+          $http.post('/payments/token', {token: $scope.token, amount: $scope.card.amount, user:sessionStorage.getItem('user'), eventId: EventsFactory.currentEvent})
+          // 
+          // 
+          // 
+          // 
             .success(function(data, status, headers, config){
               console.log('Status:', status, 'Message: Token sent to the server');
               //redirect back to the main events page on successful payment
