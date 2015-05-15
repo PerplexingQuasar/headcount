@@ -5,7 +5,8 @@ angular.module('headcount', [
   'headcount.auth',
   'ngRoute',
   'ngMaterial',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'flash'
 ])
 .config(function($routeProvider, $httpProvider, $mdThemingProvider) {
   $routeProvider
