@@ -59,9 +59,8 @@ angular.module('headcount.events', ['flash'])
               //redirect back to the main events page on successful payment
               $timeout(function(){
                 $location.url('/events');
-                $scope.digest();
                 // window.location.href="#/events";
-               }, 2000);
+               }, 1000);
               $scope.successAlert();
               //FIND OUT WHY LOCATION IS NOT DEFINED
               // $location.hash('header');
