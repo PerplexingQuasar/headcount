@@ -28,6 +28,7 @@ h1 {
 
 #newAuth {
   margin-left: 10px;
+  color: white;
 }
 
 .toolbar_buttons {
@@ -120,6 +121,7 @@ h1 {
 
 form {
   margin: 10px;
+  color: black;
 }
 
 input {
@@ -217,6 +219,26 @@ md-list .md-button {
 
 .center-form {
   margin: 0 auto;
+}
+
+#background{
+  background-image: url('../assets/backgroundImage.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: 0;
+  position:relative;
+  height: 100%;
+}
+
+#header{
+  background-color: transparent;
+}
+
+#icon{
+  display: inline-block;
+  position: relative;
+  width: auto;
+  height: 100%;
 }
 
 /* Using Data-URI converted from svg until <md-icon> becomes available
