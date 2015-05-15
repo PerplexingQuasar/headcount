@@ -1,7 +1,14 @@
-angular.module('headcount.events', [])
+angular.module('headcount.events', ['flash'])
 
-.controller('EventsPayment', function($scope, $http) {
-
+.controller('EventsPayment', function($scope, $http, $timeout, $anchorScroll, $location, Flash) {
+  $scope.successAlert = function () {
+    var message = '<strong> Well done!</strong>  Your card was successfully charged.';
+    Flash.create('success', message, 'custom-class');
+    // First argument (success) is the type of the flash alert
+    // Second argument (message) is the message displays in the flash alert
+    // You can inclide html as message (not just text)
+    // Third argument (custom-class) is the custom class for the perticular flash alert
+  }
   // Disables the submit payment button
   $scope.payBtnClickable = false;
 
@@ -50,7 +57,15 @@ angular.module('headcount.events', [])
             .success(function(data, status, headers, config){
               console.log('Status:', status, 'Message: Token sent to the server');
               //redirect back to the main events page on successful payment
-              window.location.href="#/events";
+              $timeout(function(){
+                $location.url('/events');
+                // window.location.href="#/events";
+               }, 1000);
+              $scope.successAlert();
+              //FIND OUT WHY LOCATION IS NOT DEFINED
+              // $location.hash('header');
+              $anchorScroll();
+              // alert("Thanks for paying for this sweet event, yo.");
             })
             .error(function(data, status, headers, config){
               console.log('Status:', status, 'Message: Failed attempt, blame Jimmy.');
@@ -131,12 +146,17 @@ angular.module('headcount.events', [])
     // Fetch events that were created by you.
 
     $scope.fetchEvents = function() {
+      console.log("EVENTS ARE BEING FETCHED");
         return $http({
                 method: 'GET',
                 url: '/events-fetch'
             })
             .then(function(resp) {
+              console.log("INSIDE THEN");
+
                 if (resp.data.length >= 1) {
+                  console.log("resp.data.length",resp.data);
+
                     $scope.events = resp.data;
                     console.log($scope.events);
                 } else {

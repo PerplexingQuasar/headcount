@@ -12,7 +12,7 @@
       <md-button class="md-raised md-primary" ng-model="shouldNotBeClickable" ng-disabled="shouldNotBeClickable" ng-click="acceptOrDeclineInvite(true, event); shouldNotBeClickable = true"> JOIN </md-button>
       <md-button class="md-raised md-primary"ng-model="shouldNotBeClickable" ng-disabled="shouldNotBeClickable" ng-click="acceptOrDeclineInvite(false, event); shouldNotBeClickable = true"> DECLINE </md-button>
       <!-- PAYMENT INFO -->
-      <form name="creditCardForm" ng-submit="generateClientToken()" ng-controller="EventsPayment">
+      <form name="creditCardForm" ng-controller="EventsPayment">
         <h3>Credit Card Info</h3>
         <md-input-container style="width:50%">
             <label>Credit Card Number</label>
