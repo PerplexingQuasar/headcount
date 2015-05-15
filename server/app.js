@@ -13,6 +13,7 @@ var routes       = require('./../routes/index');
 var users        = require('./../routes/users');
 var User        = require('../app/models/user');
 var auth         = require('./../routes/auth');
+var payments         = require('./../routes/payments');
 
 // Authentication
 var oauth        = require('./../oauth.js');
@@ -44,6 +45,7 @@ app.use(session({
 app.use('/', routes);
 app.use('/users', users);
 app.use('/auth', auth);
+app.use('/payments', payments);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {

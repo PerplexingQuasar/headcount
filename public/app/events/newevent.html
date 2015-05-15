@@ -72,27 +72,7 @@
                     </md-list-item>
                 </md-list>
             </md-content>
-            <!-- PAYMENT INFO -->
-            <h3>Credit Card Info</h3>
-            <md-input-container style="width:50%">
-                <label>Credit Card Number</label>
-                <input ng-model="card.number">
-            </md-input-container>
-            <md-input-container style="width:50%">
-                <label>CVC</label>
-                <input ng-model="card.cvc">
-            </md-input-container>
-            <div layout layout-sm="column" >
-              <md-input-container style="width:10%" md-no-float>
-                  <label>Expiration MM</label>
-                  <input ng-model="card.expirationMonth" style="width: 100px">
-              </md-input-container>
-              <md-input-container style="width:10%" md-no-float>
-                  <label>Expiration YYYY</label>
-                  <input ng-model="card.expirationYear" style="width: 100px">
-              </md-input-container>
-            </div>
-            <!-- END PAYMENT -->
+           
             <section layout="row" layout-sm="column" layout-align="center center">
                 <!-- <md-button type="submit" ng-disabled="shouldNotBeCreatable" class="md-raised md-primary">Create</md-button> -->
                 <md-button type="submit" ng-disabled="false" class="md-raised md-primary">Create</md-button>
