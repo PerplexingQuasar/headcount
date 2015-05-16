@@ -24,6 +24,7 @@ angular.module('headcount.auth', [])
     })
     .then(function (resp) {
       $window.sessionStorage.setItem('user', resp.config.data.username);
+      // $window.sessionStorage.setItem('userId', resp.config.data.user_id);
       $window.location.href = "/";
     })
     .catch(function(error) {

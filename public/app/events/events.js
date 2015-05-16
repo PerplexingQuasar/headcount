@@ -1,6 +1,9 @@
 angular.module('headcount.events', ['flash'])
 
 .controller('EventsPayment', function($scope, $http, $timeout, $anchorScroll, $location, Flash,EventsFactory) {
+  
+
+
   $scope.successAlert = function () {
     var message = '<strong> Well done!</strong>  Your card was successfully charged.';
     Flash.create('success', message, 'custom-class');
@@ -53,7 +56,13 @@ angular.module('headcount.events', ['flash'])
           $scope.token = response['id'];
 
           // Send the token the server in this route: /payments/token
-          $http.post('/payments/token', {token: $scope.token, amount: $scope.card.amount, user:sessionStorage.getItem('user'), eventId: EventsFactory.currentEvent})
+          $http.post('/payments/token', {
+            token: $scope.token,
+            amount: $scope.card.amount,
+            user:sessionStorage.getItem('user'),
+            eventId: EventsFactory.currentEvent,
+            userId: null
+          })
           // 
           // 
           // 
@@ -162,7 +171,7 @@ angular.module('headcount.events', ['flash'])
                   console.log("resp.data.length",resp.data);
 
                     $scope.events = resp.data;
-                    console.log($scope.events);
+                    console.log('EVENTSSSS', $scope.events);
                 } else {
                     console.log("THERE ARE NO EVENTS TO FETCH!!!");
                 }
