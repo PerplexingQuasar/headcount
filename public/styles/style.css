@@ -196,7 +196,7 @@ ul.account {
   height: auto;
   width: 40%;
   float:left;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .preview {
@@ -292,31 +292,31 @@ md-list .md-button {
 .event-info img{
   position: relative;
   display: inline-block;
-  left: 22%;
+  left: 13%;
 }
 
 #event-{
   position: relative;
   display: inline-block;
-  left: 22%;
+  left: 13%;
 }
 
 .event-button{
-  left: 37%;
+  left: 33%;
 }
 
 #payment-form .entry{
   position: relative;
-  left: 38%;
+  left: 35%;
 }
 
 #payment-form #credit-number{
-  left: 33%;
-  width: 36%;
+  left: 28%;
+  width: 45%;
 }
 
 #payment-form #credit-cvc{
-  left: 33%;
+  left: 28%;
   width: 10%;
   display: inline-block;
 }
@@ -324,7 +324,7 @@ md-list .md-button {
 #payment-form #credit-expiration{
   display: inline-block;
   position: relative;
-  left: 33%;
+  left: 28%;
 }
 
 #payment-form #credit-expmonth{
