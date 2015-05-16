@@ -16,6 +16,13 @@ angular.module('headcount.events', ['flash'])
   // Variable that contains the stripe error messages
   $scope.stripeError = '';
 
+  //Display/hide credit card form
+  $scope.displayPayment = false;
+
+  $scope.display = function(){
+    $scope.displayPayment = true;
+  };
+
   // Contains the information of the user's credit card
   $scope.card = {};
   $scope.card.number="";

@@ -12,8 +12,7 @@
 
       <div ng-controller='EventsPayment'>
         
-        <md-button class="event-button md-raised md-primary" ng-model="shouldNotBeClickable" 
-         ng-click="acceptOrDeclineInvite(true, event); shorCard()"> JOIN </md-button>
+        <md-button class="event-button md-raised md-primary" ng-model="shouldNotBeClickable" ng-click="acceptOrDeclineInvite(true, event); display();"> JOIN </md-button>
         <md-button class="event-button md-raised md-primary"ng-model="shouldNotBeClickable" ng-disabled="shouldNotBeClickable" ng-click="acceptOrDeclineInvite(false, event); shouldNotBeClickable = true"> DECLINE </md-button>
         <!-- PAYMENT INFO -->
         <form class='check-element animate-hide' id='payment-form' name="creditCardForm" ng-submit="generateClientToken()" ng-show='displayPayment'>
@@ -22,22 +21,24 @@
               <label>Credit Card Number</label>
               <input ng-model="card.number">
           </md-input-container>
-          <md-input-container id='credit-number' class='entry' style="width:50%">
+          <md-input-container id='credit-cvc' class='entry'>
               <label>CVC</label>
               <input ng-model="card.cvc">
           </md-input-container>
-          <div id='credit-number' layout class='entry' layout-sm="column" >
-            <md-input-container style="width:10%" md-no-float>
+          <div layout id='credit-expiration' layout-sm="column" >
+            <md-input-container id='credit-expmonth' md-no-float>
                 <label>Expiration MM</label>
                 <input ng-model="card.expirationMonth" style="width: 100px">
             </md-input-container>
-            <md-input-container style="width:10%;left:10%" md-no-float>
+            <md-input-container id='credit-expyear' md-no-float>
                 <label>Expiration YYYY</label>
                 <input ng-model="card.expirationYear" style="width: 100px">
             </md-input-container>
           </div>
+          <br>
           <md-button type="submit" ng-disabled="payBtnClickable" ng-click="generateClientToken()" class="entry md-raised md-primary" >Pay</md-button>
           <span class='entry'>Error: {{stripeError}}</span>
+          <div style='height:50px;'></div>
         </form>
         <!-- END PAYMENT -->
       </div>

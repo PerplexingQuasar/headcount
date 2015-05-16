@@ -129,7 +129,7 @@ form {
 }
 
 input {
-  width: 40%;
+  width: 100%;
   display: block;
   font-size: 13px;
   padding: 5px;
@@ -230,7 +230,10 @@ md-list .md-button {
 
 .event{
   background-color: rgba(255,255,255,0.8);
-
+  width: 50%;
+  position: relative;
+  left: 25%;
+  border-radius: 60px; 
 }
 
 .center-form {
@@ -283,31 +286,57 @@ md-list .md-button {
   position: relative;
   left: 30%;
   margin-bottom: 10px;
+  width: 40%;
 }
 
 .event-info img{
   position: relative;
   display: inline-block;
-  left: 35%;
+  left: 22%;
 }
 
 #event-{
   position: relative;
   display: inline-block;
-  left: 35%;
+  left: 22%;
 }
 
 .event-button{
-  left: 42.5%;
+  left: 37%;
 }
 
 #payment-form .entry{
   position: relative;
-  left: 43%;
+  left: 38%;
 }
 
 #payment-form #credit-number{
-  left: 35%;
+  left: 33%;
+  width: 36%;
+}
+
+#payment-form #credit-cvc{
+  left: 33%;
+  width: 10%;
+  display: inline-block;
+}
+
+#payment-form #credit-expiration{
+  display: inline-block;
+  position: relative;
+  left: 33%;
+}
+
+#payment-form #credit-expmonth{
+  left: 0;
+  display: inline-block;
+  width: 5%;
+}
+
+#payment-form #credit-expyear{
+  left: 40%;
+  display: inline-block;
+  width: 5%;
 }
 
 .animate-hide {
