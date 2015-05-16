@@ -234,25 +234,34 @@ router.post('/events-create', function(req, res) {
   console.log('req.session.user_id',req.session.user_id);
   console.log('host', eventData.host)
 
-  new Event({
-    title: eventData.title,
-    description: eventData.description,
-    expiration: eventData.expiration,
-    thresholdPeople: eventData.thresholdPeople,
-    thresholdMoney: eventData.thresholdMoney,
-    committedPeople: 0,
-    committedMoney: 0,
-    paid: false,
-    host_id: eventData.host,
-    image: eventData.image
-  }).save()
-    .then(function(model){
+  // find the user ID
+  User.forge({username: eventData.host})
+    .fetch()
+    .then(function(user){
+      console.log('user', user);
+      // CREATE THE NEW EVENT
+      new Event({
+        title: eventData.title,
+        description: eventData.description,
+        expiration: eventData.expiration,
+        thresholdPeople: eventData.thresholdPeople,
+        thresholdMoney: eventData.thresholdMoney,
+        committedPeople: 0,
+        committedMoney: 0,
+        paid: false,
+        host_id: eventData.host,
+        image: eventData.image
+      }).save()
+        .then(function(model){
 
-      attendance.createInvites(model.id, inviteeIds, function(invites) {
-        console.log('Invites created!');
-        res.end();
-      });
+          attendance.createInvites(model.id, inviteeIds, function(invites) {
+            console.log('Invites created!');
+            res.end();
+          });
+        });
     });
+
+  
 });
 
 /**

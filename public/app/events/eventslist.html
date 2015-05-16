@@ -8,7 +8,7 @@
       <div class="info" >
         <img width="100px" height="100px" src="{{link.image}}" />
         <div id="{{ 'event-' + $index }}" class="info" >
-          <span> <strong> {{ link.title }} </strong> </span> <br />
+          <span> <strong> {{ link.title }} </strong> </span> - <span>{{link.id}}</span><br />
           <span> Expiration: {{ link.expiration |  date : format : timezone}} </span> <br />
           <span> People needed: {{ link.thresholdPeople - link.committedPeople }} </span>
         </div>

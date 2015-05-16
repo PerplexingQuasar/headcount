@@ -1,6 +1,7 @@
 var qs = require('querystring');
 var request = require('request');
 var User = require('./../app/models/user.js');
+var Invite = require('./../app/models/invite.js');
 
 var venmoEndpoint;
 
@@ -9,6 +10,20 @@ var venmoEndpoint;
  * Takes access token of of user who created event, user id of paying user, note (required, but can be any string), and amount (in dollars --> 1.50).
  * Returns payment information.
  */
+
+exports.addPaymentToken = function(data){
+  console.log("Query information",data);
+  Invite.forge({
+    'events_idEvents':data.eventId.id
+  })
+    .fetch()
+    .then(function(result){
+      console.log("Add Payment Token Results",result);
+    });
+};
+
+var checkEventPayments=function(){};
+
 var payEventCreator = function(payingAccessToken, receivingUserId, note, amount, callback) {
 
   var payAuthorizedUserUrl = venmoEndpoint + '?' + qs.stringify({
@@ -75,4 +90,4 @@ var payOutEvent = function(payingUserIds, receivingUserVenmoId, note, amount, is
 
 };
 
-module.exports = payOutEvent;
+// module.exports = payOutEvent;
