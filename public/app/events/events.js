@@ -1,3 +1,4 @@
+
 angular.module('headcount.events', ['flash'])
 
 .controller('EventsPayment', function($scope, $http, $timeout, $anchorScroll, $location, Flash) {
@@ -15,12 +16,19 @@ angular.module('headcount.events', ['flash'])
   // Variable that contains the stripe error messages
   $scope.stripeError = '';
 
+  //Display/hide credit card form
+  $scope.displayPayment = false;
+
+  $scope.display = function(){
+    $scope.displayPayment = true;
+  };
+
   // Contains the information of the user's credit card
   $scope.card = {};
-  $scope.card.number="4000000000000077";
-  $scope.card.cvc="222";
-  $scope.card.expirationMonth="12";
-  $scope.card.expirationYear="2022";
+  $scope.card.number="";
+  $scope.card.cvc="";
+  $scope.card.expirationMonth="";
+  $scope.card.expirationYear="";
 
   // Set the stripe publishable key. This key will used to generate a credit card token
   Stripe.setPublishableKey('pk_test_oexI0bw5PDtL452kuxZtQX0I');
@@ -271,7 +279,11 @@ angular.module('headcount.events', ['flash'])
 
 
         $scope.newEvent.invited = $scope.invitedUsers;
-        console.log('Event details', $scope.newEvent);
+        console.log('Event details', $scope.newEvent.image);
+        if(!$scope.newEvent.image){
+          console.log('defaultEventImage');
+          $scope.newEvent.image = 'assets/defaultEventImage.jpg';
+        }
         return $http({
                 method: 'POST',
                 url: '/events-create',

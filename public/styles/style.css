@@ -3,6 +3,7 @@ body {
   margin-top: 10px;
   padding: 50px;
   font: 14px "Arial";
+  font-size: 20px;
 }
 
 h1 {
@@ -28,7 +29,7 @@ h1 {
 
 #newAuth {
   margin-left: 10px;
-  color: white;
+  color: black;
 }
 
 .toolbar_buttons {
@@ -92,7 +93,10 @@ h1 {
 
 .link img {
   float: left;
-  margin: 0 5px;
+  margin-left: 5px;
+  margin-right: 20px;
+  width: 240px;
+  height: 140px;
 }
 
 .link .visits {
@@ -125,7 +129,7 @@ form {
 }
 
 input {
-  width: 360px;
+  width: 100%;
   display: block;
   font-size: 13px;
   padding: 5px;
@@ -189,8 +193,10 @@ ul.account {
 }
 
 .links .ng-scope{
-  width: 400px;
+  height: auto;
+  width: 40%;
   float:left;
+  font-size: 20px;
 }
 
 .preview {
@@ -211,10 +217,23 @@ md-list .md-button {
 .event-image {
   margin: 20px;
   border-radius: 10px;
+  width: 200px;
+  height: 200px;
 }
 
 .events {
   height: 100%;
+  position: relative;
+  top: 10px;
+  z-index: 0;
+}
+
+.event{
+  background-color: rgba(255,255,255,0.8);
+  width: 50%;
+  position: relative;
+  left: 25%;
+  border-radius: 60px; 
 }
 
 .center-form {
@@ -222,17 +241,18 @@ md-list .md-button {
 }
 
 #background{
-  /*background-image: url('../assets/backgroundImage.jpg');*/
+  background-image: url('../assets/backgroundImage.gif');
   background-size: 100% 100%;
-  background-color: #ddd;
+  /*background-color: #ddd;*/
   background-repeat: no-repeat;
   margin-top: 0;
   position:relative;
   height: 100%;
+  overflow: hidden;
 }
 
 #header{
-  background-color: #55f;
+  background-color: rgba(0,0,255,0.4);
 }
 
 #icon{
@@ -240,6 +260,101 @@ md-list .md-button {
   position: relative;
   width: 13%;
   height: auto;
+}
+
+.center-form{
+  background-color: rgba(255,255,255,0.5);
+  margin-top: 20px;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.link{
+  background-color: rgba(255,255,255,0.8);
+  position: relative;
+  left: 30%;
+  top: 5%;
+}
+
+#ngView{
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#filter-bar{
+  position: relative;
+  left: 30%;
+  margin-bottom: 10px;
+  width: 40%;
+}
+
+.event-info img{
+  position: relative;
+  display: inline-block;
+  left: 22%;
+}
+
+#event-{
+  position: relative;
+  display: inline-block;
+  left: 22%;
+}
+
+.event-button{
+  left: 37%;
+}
+
+#payment-form .entry{
+  position: relative;
+  left: 38%;
+}
+
+#payment-form #credit-number{
+  left: 33%;
+  width: 36%;
+}
+
+#payment-form #credit-cvc{
+  left: 33%;
+  width: 10%;
+  display: inline-block;
+}
+
+#payment-form #credit-expiration{
+  display: inline-block;
+  position: relative;
+  left: 33%;
+}
+
+#payment-form #credit-expmonth{
+  left: 0;
+  display: inline-block;
+  width: 5%;
+}
+
+#payment-form #credit-expyear{
+  left: 40%;
+  display: inline-block;
+  width: 5%;
+}
+
+.animate-hide {
+  -webkit-transition: all linear 1.0s;
+  transition: all linear 1.0s;
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+}
+
+.animate-hide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.check-element {
+  padding: 10px;
 }
 
 /* Using Data-URI converted from svg until <md-icon> becomes available
